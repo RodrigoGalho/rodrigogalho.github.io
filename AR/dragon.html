@@ -1,0 +1,17 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="dragon-obj" src="assets/dragon-turntable/dragon-turntable.obj"></a-asset-item>
+        <a-asset-item id="dragon-mtl" src="assets/dragon-turntable/dragon-turntable.mtl"></a-asset-item>
+      </a-assets>        
+      <a-marker preset="hiro">
+        <a-entity obj-model="obj: #dragon-obj; mtl: #dragon-mtl" scale="0.07 0.07 0.07"></a-entity>
+  	  </a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
