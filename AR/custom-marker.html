@@ -6,11 +6,11 @@
     <a-scene embedded arjs='sourceType: webcam;'>
       <!-- handle marker with your own pattern -->
       <a-assets>
-        <img src="assets/teste-link.png" id="image-test" alt="">
+        <img src="assets/teste-link2.png" id="image-test" alt="">
       </a-assets>
-      <a-marker type='pattern' url='markers/pattern-alianca.patt'>
+      <a-marker type='barcode' value='5'>
         <a-plane width="1.1" height="1.1" rotation="-90 0 0" position='0 0 0' material='color: white;'></a-plane>
-        <a-image src="#image-test" width="1"  position="0 1 0"></a-image>
+        <a-image src="#image-test" width="1" height="auto"  position="0 .5 0"></a-image>
       </a-marker>
 
   	  <a-entity camera></a-entity>
