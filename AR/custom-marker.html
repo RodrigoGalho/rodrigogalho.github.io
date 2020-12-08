@@ -1,15 +1,18 @@
 <!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
       <!-- handle marker with your own pattern -->
       <a-assets>
-        <img src="assets/teste-link2.png" id="image-test" alt="">
+        <a-asset-item id="tv-obj" src="assets/tv/old_tv.obj"></a-asset-item>
+        <img src="assets/passaros.png" id="image-test" alt="">
       </a-assets>
+      
       <a-marker type='barcode' value='5'>
-        <a-sphere position="0 0 0" rotation="0 45 0" color="#4CC3D9" dynamic-body></a-sphere>
+        <!--a-entity obj-model="obj: #tv-obj;" scale="1 1 1" color="#990000"></a-entity-->
+        <a-image pikachu src="#image-test" scale="6 6 6"position="2 0 0" rotation="0 0 0"></a-image>
       </a-marker>
 
   	  <a-entity camera></a-entity>
