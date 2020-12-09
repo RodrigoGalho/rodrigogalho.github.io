@@ -5,12 +5,15 @@
   <script>
     AFRAME.registerComponent('markerhandler', {
       init: function () {
-        this.el.sceneEl.addEventListener('markerFound', () => {
+        this.el.sceneEl.addEventListener('click', () => {
           // redirect to custom URL e.g. google.com
-          window.location = 'https://www.google.com/';
+          //window.location = 'https://www.google.com/';
+
+          console.log("TEST CLICK MARKER")
         })
       }
     });
+
   </script>
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'>
@@ -18,18 +21,20 @@
       <a-assets>
         <a-asset-item id="tv-obj" src="assets/obj/turning_globe.obj"></a-asset-item>
         <a-asset-item id="tv-obj-mtl" src="assets/obj/turning_globe.mtl"></a-asset-item>
-        <img id="wall-image" src="assets/images/wall.png">
-        <img src="assets/passaros.png" id="image-test" alt="">
+        <img id="wall-image" src="assets/images/wall-liso.jpg">
+        <img src="assets/images/passaros-1.png" id="passaros-1" alt="">
+        <img src="assets/images/passaros-2.png" id="passaros-2" alt="">
       </a-assets>
 
-      <a-marker type='barcode' value='5'>
+      <a-marker type='barcode' value='100'>
         <a-entity obj-model="obj: #tv-obj; mtl: #tv-obj-mtl" scale=".2 .2 .2" position="0.290 0 0.010"></a-entity>
-        <!--a-image birds src="#image-test" scale="6 6 6"position="2.1 0 0" rotation="0 0 0"></a-image-->
+        <!--a-image birds src="#passaros-1" scale="6 6 6"position="2.1 0 0" rotation="0 0 0"></a-image-->
       </a-marker>
 
       <a-marker type='barcode' value='6'>
-        <a-image birds src="#image-test" scale="6 6 6"position="2.824 3.537 0.838" rotation="0 -12.496 0"></a-image>
-        <a-entity position="0 0.676 0" scale="1.980 1.470 0.200" geometry="primitive: box" material="shader: flat; src: #wall-image"></a-entity>
+        <a-image src="#passaros-1" scale="6 6 6"position="2.824 3.537 1.203" rotation="0 -12.496 0" material="transparent:  true; depthTest:  false;"></a-image>
+        <a-image src="#passaros-2" scale="6 6 6"position="2.824 3.537 0.338" rotation="0 -12.496 0" material="transparent:  true; depthTest:  false;"></a-image>
+        <a-entity markerhandler position="0 0.676 0" scale="1.980 1.470 0.200" geometry="primitive: box" material="shader: flat; src: #wall-image"></a-entity>
       </a-marker>
       
 
