@@ -8,9 +8,6 @@
     <a-scene scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3; trackingMethod: best; sourceType: webcam;debugUIEnabled: false;'>
       <!-- handle marker with your own pattern -->
       <a-assets>
-        <a-asset-item id="globe" src="assets/turning_globe/turning_globe.obj"></a-asset-item>
-        <a-asset-item id="globe-mtl" src="assets/turning_globe/turning_globe.mtl"></a-asset-item>
-
         <a-asset-item id="tv" src="assets/tv/tv.obj"></a-asset-item>
 
         <a-asset-item id="bird" src="assets/bird/bird.obj"></a-asset-item>
@@ -27,9 +24,7 @@
         The images are in the assets/markers folder
        -->
       
-      <a-marker type='barcode' value='1'>
-        <a-entity obj-model="obj: #globe; mtl: #globe-mtl" scale=".2 .2 .2" position="0.290 0 0.010"></a-entity>
-      </a-marker>
+      
 
       <a-marker type='barcode' value='10'>
         <a-image src="#passaros-1" scale="6 6 6"position="2.824 3.537 1.203" rotation="0 -12.496 0" material="transparent:  true; depthTest:  false;"></a-image>
